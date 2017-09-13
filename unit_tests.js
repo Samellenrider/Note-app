@@ -1,8 +1,9 @@
-var Note = require('./note-model.js');
-var NoteList = require('./note-list-model.js');
-var NoteListView = require('./note-list-view.js');
+// var Note = require('./note-model.js');
+// var NoteList = require('./note-list-model.js');
+// var NoteListView = require('./note-list-view.js');
 
-(function(){
+(function(exports) {
+function testNote() {
   var note = new Note('this is a test');
     if (note.text !== 'this is a test') {
       throw new Error('does not instantiate with text')
@@ -10,23 +11,48 @@ var NoteListView = require('./note-list-view.js');
     if (note.read() !== 'this is a test') {
       throw new Error('does not return stored text')
     };
+   }
+  
+  testNote();
+})(this);
 
-})();
 
-(function(){
+(function(exports) {
+function testList(){
   var noteList = new NoteList;
-    noteList.addNote('First note');
-  if (noteList.notes[0].read() !== 'First note')
+  var note = new Note('First note');
+    noteList.addNote(note);
+  if (noteList.notes[0].read() !== 'First note'){
   	throw new Error('Does not read note from array')
-})();
+  };
+ }
+  
+  testList();
+})(this);
 
 
-(function(){
+
+(function(exports) {
+function testAdd(){
   var noteList = new NoteList;
-    noteList.addNote('First note');
-    // console.log(noteList.notes[0].read())
-    if (new NoteListView(noteList) !== 'First note')
-    throw new Error('Does not read note from array')
-  // if (new NoteListView(noteList) !== '<ul><li>First note</li></ul>')
-  // 	throw new Error('Does not print notes into HTML')
-})();
+  var note = new Note('First note');
+    noteList.addNote(note);
+  var noteListView = new NoteListView(noteList);
+    if (noteListView.view() !== '<ul><li><div>First note</div></li></ul>'){
+  	  throw new Error('Does not print notes into HTML')
+    };
+  }
+ 
+  testAdd();
+})(this);
+
+
+
+
+
+
+
+
+
+
+

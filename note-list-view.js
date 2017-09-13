@@ -1,20 +1,17 @@
-var Note = require('./note-model.js');
-var NoteList = require('./note-list-model.js');
+(function(exports) {
+function NoteListView(listObject) {
+  this.listObject = listObject
+}
+  NoteListView.prototype.view = function() {
+  	var string = ""; 
+   for (i = 0; i < this.listObject.notes.length; i++){
+   	 string += "<li><div>" + this.listObject.notes[i].text + "</div></li>"
+    
+  };
 
+return "<ul>" + string + "</ul>"
 
-function NoteListView(noteList) {
-      for (i = 0; i < noteList.notes.length; i++){
-   noteList.notes[i].read()
-  }
-};
+ };
 
-
-// function NoteListView(listObject) {
-//   return (
-//     "<ul>" + function(listObject) {
-//       for (i = 0; i < listObject.notes.length; i++){
-//       "<li>"+ listObject.notes[i].read() + "</li>"}} + "</ul>"
-//     )
-//   };
-
-module.exports = NoteListView
+  exports.NoteListView = NoteListView;
+})(this);

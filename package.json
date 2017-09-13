@@ -1,0 +1,22 @@
+{
+  "name": "notes-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "node-list-model.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gsgkw/notes-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gsgkw/notes-challenge/issues"
+  },
+  "homepage": "https://github.com/gsgkw/notes-challenge#readme",
+  "dependencies": {
+    "http-server": "^0.10.0"
+  }
+}

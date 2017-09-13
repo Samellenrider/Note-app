@@ -1,3 +1,5 @@
+(function(exports) {
+
 function Note(text) {
   this.text = text
 }
@@ -5,6 +7,7 @@ function Note(text) {
   Note.prototype.read = function() {
     return this.text
   }
+  exports.Note = Note;
+})(this);
 
-
-module.exports = Note
+// module.exports = Note
