@@ -20,8 +20,7 @@ function testNote() {
 (function(exports) {
 function testList(){
   var noteList = new NoteList;
-  var note = new Note('First note');
-    noteList.addNote(note);
+    noteList.addNote('First note');
   if (noteList.notes[0].read() !== 'First note'){
   	throw new Error('Does not read note from array')
   };
@@ -35,8 +34,7 @@ function testList(){
 (function(exports) {
 function testAdd(){
   var noteList = new NoteList;
-  var note = new Note('First note');
-    noteList.addNote(note);
+    noteList.addNote("First note");
   var noteListView = new NoteListView(noteList);
     if (noteListView.view() !== '<ul><li><div>First note</div></li></ul>'){
   	  throw new Error('Does not print notes into HTML')
@@ -48,11 +46,17 @@ function testAdd(){
 
 
 
+(function(exports) {
+function testController(){
+  var noteList = new NoteList;
+  var controller = new noteController(noteList);
+    if (noteList.notes[0].read() !== "Trump sucks!"){
+      throw new Error('Does not have note (Supports Trump)')
+    };
+  }
 
-
-
-
-
+  testController();
+})(this);
 
 
 
