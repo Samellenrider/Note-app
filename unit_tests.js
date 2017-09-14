@@ -60,3 +60,28 @@ function testController(){
 
 
 
+(function(exports) {
+  function testSingleNote(){
+    var note = new Note('hello');
+    var singleView = new singleNoteView(note);
+      if (singleView.returnHtml() !== "<div>hello</div>"){
+        throw new Error('Does not return HTML')
+      };
+  }
+  testSingleNote();
+})(this);
+
+
+
+(function(exports) {
+function testAdd(){
+  var noteList = new NoteList;
+    noteList.addNote("123451234512345123451234512345");
+  var noteListView = new NoteListView(noteList);
+    if (noteListView.view() !== '<ul><li><div>12345123451234512345</div></li></ul>'){
+      throw new Error('Does not print notes into HTML')
+    };
+  }
+ 
+  testAdd();
+})(this);

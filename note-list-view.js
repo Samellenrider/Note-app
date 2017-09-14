@@ -5,7 +5,9 @@ function NoteListView(listObject) {
   NoteListView.prototype.view = function() {
   	var string = ""; 
    for (i = 0; i < this.listObject.notes.length; i++){
-   	 string += "<li><div>" + this.listObject.notes[i].text + "</div></li>"
+   	var text = this.listObject.notes[i].text;
+   	 if (text.length > 20) text = text.substring(0, 20)
+   	 string += "<li><div>" + text + "</div></li>"
     
   };
 
