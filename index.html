@@ -15,40 +15,40 @@
     <div id= "app"></div>
   
         <script>
-        printElement();
-        changeElement();
+        // printElement();
+        // changeElement();
       </script>
   </body>
   <footer>
   </footer>
 
   <body>
-    <a href="#tiger">Tiger</a> |
-    <a href="#lion">Lion</a> |
-    <a href="#cheetah">Cheetah</a> |
-    <a href="#leopard">Leopard</a>
+    <a href="#0">Note 1</a> |
+    <a href="#1">Note 2</a> |
+    <a href="#3">Note 3</a> |
+    <a href="#4">Note 4</a>
 
-    <div id="animal"></div>
+    <div id="note"></div>
 
     <script>
-      makeUrlChangeShowAnimalForCurrentPage();
+      makeUrlChangeShowNote();
 
-      function makeUrlChangeShowAnimalForCurrentPage() {
-        window.addEventListener("hashchange", showAnimalForCurrentPage);
+      function makeUrlChangeShowNote() {
+        window.addEventListener("hashchange", showNoteForCurrentPage);
       };
 
-      function showAnimalForCurrentPage() {
-        showAnimal(getAnimalFromUrl(window.location));
+      function showNoteForCurrentPage() {
+        showNote(getNoteFromUrl(window.location));
       };
 
-      function getAnimalFromUrl(location) {
+      function getNoteFromUrl(location) {
         return location.hash.split("#")[1];
       };
 
-      function showAnimal(animal) {
+      function showNote(note) {
         document
-          .getElementById("animal")
-          .innerHTML = animal;
+          .getElementById("app")
+          .innerHTML = note;
       };
     </script>
   </body>

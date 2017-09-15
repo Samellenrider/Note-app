@@ -39,7 +39,7 @@ function testAdd(){
   var noteList = new NoteList;
     noteList.addNote("First note");
   var noteListView = new NoteListView(noteList);
-    if (noteListView.view() !== '<ul><li><a href=#First note></li></ul>'){
+    if (noteListView.view() !== '<ul><li><a href=#First note></a></li></ul>'){
   	  throw new Error('Does not print notes into HTML')
     };
   }
@@ -81,7 +81,7 @@ function testAdd(){
   var noteList = new NoteList;
     noteList.addNote("123451234512345123451234512345");
   var noteListView = new NoteListView(noteList);
-    if (noteListView.view() !== '<ul><li><a href=#12345123451234512345></li></ul>'){
+    if (noteListView.view() !== '<ul><li><a href=#12345123451234512345></a></li></ul>'){
       throw new Error('Does not print notes into HTML')
     };
   }

@@ -8,7 +8,7 @@
 
     changeElement = function () {
     console.log(document.getElementById("app"))
-  	document.getElementById("app").innerHTML = "Hello Peeta";
+  	document.getElementById("app").innerHTML = NoteList;
   };
   // exports.Controller = Controller;
 // })(this);
