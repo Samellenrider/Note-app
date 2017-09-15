@@ -7,7 +7,7 @@ function NoteListView(listObject) {
    for (i = 0; i < this.listObject.notes.length; i++){
    	var text = this.listObject.notes[i].text;
    	 if (text.length > 20) text = text.substring(0, 20)
-   	 string += "<li><div>" + text + "</div></li>"
+   	 string += "<li><a href=#" + text + "></li>"
     
   };
 

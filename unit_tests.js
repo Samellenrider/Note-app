@@ -8,6 +8,9 @@ function testNote() {
     if (note.text !== 'this is a test') {
       throw new Error('does not instantiate with text')
     };
+    if (note.id !== 0) {
+      throw new Error('wrong ID')
+    };
     if (note.read() !== 'this is a test') {
       throw new Error('does not return stored text')
     };
@@ -36,7 +39,7 @@ function testAdd(){
   var noteList = new NoteList;
     noteList.addNote("First note");
   var noteListView = new NoteListView(noteList);
-    if (noteListView.view() !== '<ul><li><div>First note</div></li></ul>'){
+    if (noteListView.view() !== '<ul><li><a href=#First note></li></ul>'){
   	  throw new Error('Does not print notes into HTML')
     };
   }
@@ -78,10 +81,43 @@ function testAdd(){
   var noteList = new NoteList;
     noteList.addNote("123451234512345123451234512345");
   var noteListView = new NoteListView(noteList);
-    if (noteListView.view() !== '<ul><li><div>12345123451234512345</div></li></ul>'){
+    if (noteListView.view() !== '<ul><li><a href=#12345123451234512345></li></ul>'){
       throw new Error('Does not print notes into HTML')
     };
   }
  
   testAdd();
 })(this);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
